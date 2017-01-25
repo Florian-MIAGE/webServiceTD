@@ -2,9 +2,8 @@
 
 version 0.2 (2016)
 
-Pascal Poizat<br/>
+PROCS - MIAGE M2<br/>
 Université Paris Ouest Nanterre la Défense<br/>
-[http://lip6.fr/Pascal.Poizat](http://lip6.fr/Pascal.Poizat/)<br/>
 
 ## I. Démarrage en douceur
 
