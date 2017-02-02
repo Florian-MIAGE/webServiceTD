@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://epicerie/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             targetNamespace="http://epicerie.exercice5.procs.miage.paris10.fr/" name="EpicerieImplService">
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://epicerie/" schemaLocation="epicerie.xsd"></xsd:import>
+        </xsd:schema>
+    </types>
+    <message name="enregisterInputMessage">
+        <part name="produit" type="tns:Produit"></part>
+    </message>
+    <message name="enregisterOutputMessage"></message>
+    <message name="ajouterInputMessage">
+        <part name="idProduit" type="xsd:IDREF"></part>
+        <part name="qte" type="xsd:int"></part>
+    </message>
+    <message name="ajouterOutputMessage"></message>
+    <message name="obtenirQuantiteInputMessage">
+        <part name="idProduit" type="xsd:IDREF"></part>
+    </message>
+    <message name="obtenirQuantiteOutputMessage">
+        <part name="return" type="xsd:int"></part>
+    </message>
+    <message name="listeProduitsIntputMessage">
+    </message>
+    <message name="listeProduitsOutputMessage">
+        <part name="return" type="tns:ListeProduit"></part>
+    </message>
+    <message name="listStockInputMessage">
+    </message>
+    <message name="listeStockOutputMessage">
+        <part name="return" type="tns:ListeStock"></part>
+    </message>
+    <portType name="Epicerie">
+        <operation name="enregister">
+            <input message="tns:enregisterInputMessage"></input>
+            <output message="tns:enregisterOutputMessage"></output>
+        </operation>
+        <operation name="ajouter" parameterOrder="idProduit qte">
+            <input message="tns:ajouterInputMessage"></input>
+            <output message="tns:ajouterOutputMessage"></output>
+        </operation>
+        <operation name="obtenirQuantite">
+            <input message="tns:obtenirQuantiteInputMessage"></input>
+            <output message="tns:obtenirQuantiteOutputMessage"></output>
+        </operation>
+        <operation name="listeProduits">
+            <input message="tns:listeProduitsIntputMessage"></input>
+            <output message="tns:listeProduitsOutputMessage"></output>
+        </operation>
+        <operation name="listeStock">
+            <input message="tns:listStockInputMessage"></input>
+            <output message="tns:listeStockOutputMessage"></output>
+        </operation>
+    </portType>
+    <binding name="EpicerieImplPortBinding" type="tns:Epicerie">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"></soap:binding>
+        <operation name="enregister">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </output>
+        </operation>
+        <operation name="ajouter">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </output>
+        </operation>
+        <operation name="obtenirQuantite">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </output>
+        </operation>
+        <operation name="listeProduits">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </output>
+        </operation>
+        <operation name="listeStock">
+            <soap:operation soapAction=""></soap:operation>
+            <input>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </input>
+            <output>
+                <soap:body use="literal" namespace="http://epicerie/"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="EpicerieImplService">
+        <port name="EpicerieImplPort" binding="tns:EpicerieImplPortBinding">
+            <soap:address location="http://localhost:9999/ws/carrouf"></soap:address>
+        </port>
+    </service>
+</definitions>

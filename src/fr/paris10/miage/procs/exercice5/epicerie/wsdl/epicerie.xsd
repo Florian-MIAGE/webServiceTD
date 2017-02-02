@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tns="http://epicerie/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           version="1.0"
+           targetNamespace="http://epicerie/">
+    <xs:complexType name="Produit">
+        <xs:sequence>
+            <xs:element name="id" type="xs:ID"></xs:element>
+            <xs:element name="libelle" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StockProduit">
+        <xs:sequence>
+            <xs:element name="produit" type="xs:IDREF"></xs:element>
+            <xs:element name="quantite" type="xs:int"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ListeProduit">
+        <xs:sequence>
+            <xs:element name="item" type="tns:Produit" minOccurs="0" maxOccurs="unbounded" nillable="true"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ListeStock">
+        <xs:sequence>
+            <xs:element name="item" type="tns:StockProduit" minOccurs="0" maxOccurs="unbounded" nillable="true"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
