@@ -1,7 +1,5 @@
 package fr.paris10.miage.procs.exercice3.radars.service;
 
-import java.util.ArrayList;
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
