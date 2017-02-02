@@ -9,16 +9,15 @@ import fr.paris10.miage.procs.exercice3.radars.model.Voiture;
 import fr.paris10.miage.procs.exercice3.radars.service.SystemeAmendes;
 
 import java.net.URL;
-import java.util.List;
 
 public class AmendesClient {
 	
 	private static void listingAmendes(SystemeAmendes sysAmendes, String immatriculation){
 		System.out.println("\nListing des amendes pour "+immatriculation);
         
-		List<Amende> amendes = sysAmendes.lister(immatriculation);
+		Amende amendes[] = sysAmendes.lister(immatriculation);
         
-		System.out.println("size :"+amendes.size());
+		System.out.println("size :"+amendes.length);
 		
         for(Amende a :amendes)
         	System.out.println(a);

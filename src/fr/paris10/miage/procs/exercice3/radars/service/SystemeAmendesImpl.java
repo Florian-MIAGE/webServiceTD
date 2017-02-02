@@ -42,7 +42,7 @@ public class SystemeAmendesImpl implements SystemeAmendes{
 	}
 
 	@Override
-	public ArrayList <Amende> lister(String immatriculation) {
+	public Amende[] lister(String immatriculation) {
 		List <Amende> amendesImmatriculation = new ArrayList <Amende> ();
 		
 		for (Map.Entry<Integer, Amende> amandeEntry : amendes.entrySet()) {
@@ -53,7 +53,9 @@ public class SystemeAmendesImpl implements SystemeAmendes{
 			}
 		}
 		
-		return (ArrayList<Amende>) amendesImmatriculation;
+		Amende amendes[] =new Amende[amendesImmatriculation.size()];
+		amendes = (Amende[]) amendesImmatriculation.toArray(amendes);
+		return amendes;
 	}
 
 	@Override

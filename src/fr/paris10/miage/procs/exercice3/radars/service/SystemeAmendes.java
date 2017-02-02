@@ -14,6 +14,6 @@ import fr.paris10.miage.procs.exercice3.radars.model.Voiture;
 public interface SystemeAmendes {
     @WebMethod void enregistrer (Voiture v);
     @WebMethod int signaler (String immatriculation, String modele, int tarif);
-    @WebMethod ArrayList<Amende> lister(String immatriculation);
+    @WebMethod Amende[] lister(String immatriculation);
     @WebMethod void payer (int numero, String nom, String prenom);
 }
